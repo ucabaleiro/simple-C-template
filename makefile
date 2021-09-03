@@ -14,7 +14,7 @@ FILE_EXT=.out
 OUTFILE=$(PROGRAM)$(FILE_EXT)
 
 CC=gcc
-CFLAGS=-I$(IDIR)
+CFLAGS=-I$(IDIR) -g -Wall
 LIBS=
 
 IDIR=./include
