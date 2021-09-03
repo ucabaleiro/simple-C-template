@@ -18,5 +18,5 @@ Quick setup template for small C projects.
 * You can add compiler flags in the **CFLAG** macro.
 
 ### How to use:
-Use the command **make** in the console to compile the program and **make clean** to get rid of the \*.o files and the executable. In case you want to make your own makefile, refer to the [documentation](https://www.gnu.org/software/make/manual/make.html).
+In the same directory than the makefile file, use the command **make** in the console to compile the program and **make clean** to get rid of the \*.o files and the executable. In case you want to make your own makefile, refer to the [documentation](https://www.gnu.org/software/make/manual/make.html).
 
