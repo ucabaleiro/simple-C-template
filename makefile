@@ -5,7 +5,7 @@
 #	Change the FILE_EXT macro to the file extension you want for the outfile (can be left blank).
 #	Add the corresponding libraries to LIBS if needed.
 #	You can change the compiler in CC.
-#	You can add compiler flags to CFLAG.
+#	You can add compiler flags to CFLAGS.
 
 PROGRAM=programName
 
@@ -21,6 +21,7 @@ IDIR=./include
 SDIR=./src
 ODIR=./obj
 
+
 DEPS=$(wildcard $(IDIR)/*.h)
 SRC=$(wildcard $(SDIR)/*.c)
 OBJ=$(patsubst $(SDIR)/%.c,$(ODIR)/%.o,$(SRC))
@@ -34,8 +35,12 @@ $(ODIR)/%.o: $(SDIR)/%.c $(DEPS) $(ODIR)
 $(ODIR):
 	mkdir -p $@
 
-.PHONY: clean
+.PHONY: clean run
 
 clean:
-	rm -f $(ODIR)/*.o $(OUTFILE)
+	rm -f $(ODIR)/*.o $(OUTFILE) $(TESTS_OUFILE)
 
+run:
+	make clean
+	make $(PROGRAM)
+	./$(OUTFILE)
