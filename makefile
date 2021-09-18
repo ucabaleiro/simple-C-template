@@ -41,6 +41,5 @@ clean:
 	rm -f $(ODIR)/*.o $(OUTFILE) $(TESTS_OUFILE)
 
 run:
-	make clean
-	make $(PROGRAM)
+	make $(PROGRAM) && \
 	./$(OUTFILE)
